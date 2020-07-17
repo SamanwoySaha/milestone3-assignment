@@ -42,14 +42,20 @@ function brickCalculator (floorNumber) {
 function tinyFriend(friends) {
     var nameLength = 999999999999999;         //999999999999999 is used for not getting 0 nameLength;
     var tinyMember = '';
-    for (var i = 0; i < friends.length; i++){
-        if(friends[i] != '' && friends[i] != ' ' && typeof(friends[i]) == 'string') { 
-            //empty string and string with only space character is not make in count here
-            if(nameLength > friends[i].length) {
-                nameLength = friends[i].length;
-                tinyMember = friends[i];
+
+    if(friends.length == 0 || friends == undefined){
+        return 'Please do not enter an empty array';
+    }
+    else {
+        for (var i = 0; i < friends.length; i++){
+            if(friends[i] != '' && friends[i] != ' ' && typeof(friends[i]) == 'string') { 
+                //empty string and string with only space character is not make in count here
+                if(nameLength > friends[i].length) {
+                    nameLength = friends[i].length;
+                    tinyMember = friends[i];
+                }
             }
         }
+        return tinyMember;
     }
-    return tinyMember;
 }
