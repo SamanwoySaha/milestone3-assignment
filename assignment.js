@@ -1,7 +1,6 @@
-//feetToMile
 function feetToMile(feet) {
-    if(feet < 0 || typeof(feet) == 'string'){
-        return 'Please enter the number of positive value';
+    if(feet < 0 || typeof(feet) != 'number'){
+        return 'Please enter positive number';
     }
     else {
         var mile = feet / 5280;
@@ -10,10 +9,9 @@ function feetToMile(feet) {
     }
 }
 
-//woodCalculator
 function woodCalculator(chair, table, bed) {
-    if (chair < 0 || table < 0 || bed < 0 || typeof(chair) == 'string' || typeof(table) == 'string' || typeof(bed) == 'string'){
-        return 'Please enter the number of positive value';
+    if (chair < 0 || table < 0 || bed < 0 || typeof(chair) != 'number' || typeof(table) != 'number' || typeof(bed) != 'number'){
+        return 'Please enter positive number for chair, table and bed';
     }
     else {
         var totalWood = (chair * 1) + (table * 3) + (bed * 5);
@@ -21,31 +19,29 @@ function woodCalculator(chair, table, bed) {
     }
 }
 
-//brickCalculator
 function brickCalculator (floorNumber) {
-    var brickPerfeet = 1000;
+    var brickPerFeet = 1000;
     var brickAmount = 0;
     if (floorNumber < 0 || typeof(floorNumber) != 'number'){
-        return 'Please enter the number of positive value';
+        return 'Please enter positive number';
     }
     else if (floorNumber > 0 && floorNumber <= 10){
-        brickAmount = floorNumber * 15 * brickPerfeet;
+        brickAmount = floorNumber * 15 * brickPerFeet;
         return brickAmount;
     }
     else if (floorNumber >= 11 && floorNumber <= 20){
-        brickAmount = (10 * 15 * brickPerfeet) + ((floorNumber - 10) * 12 * brickPerfeet);
+        brickAmount = (10 * 15 * brickPerFeet) + ((floorNumber - 10) * 12 * brickPerFeet);
         return brickAmount;
     }
     else if (floorNumber >= 21){
-        brickAmount = (10 * 15 * brickPerfeet) + (10 * 12 * brickPerfeet) + ((floorNumber - 20) * 10 * brickPerfeet);
+        brickAmount = (10 * 15 * brickPerFeet) + (10 * 12 * brickPerFeet) + ((floorNumber - 20) * 10 * brickPerFeet);
         return brickAmount;
     }
 }
 
-//tinyFriend
 function tinyFriend(friends) {
-    var nameLength = friends[0].length;
-    var tinyMember = friends[0];
+    var nameLength = 9999999999999999999999;         //this is for not getting 0 length;
+    var tinyMember = '';
     for (var i = 0; i < friends.length; i++){
         if(friends[i] != '' && typeof(friends[i]) == 'string') {
             if(nameLength > friends[i].length) {
