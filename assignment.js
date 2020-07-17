@@ -24,3 +24,16 @@ function woodCalculator(chair, table, bed) {
 //brickCalculator
 
 //tinyFriends
+function tinyFriends(friends) {
+    var nameLength = friends[0].length;
+    var tinyMember = friends[0];
+    for (var i = 0; i < friends.length; i++){
+        if(friends[i] != '' && typeof(friends[i]) == 'string') {
+            if(nameLength > friends[i].length) {
+                nameLength = friends[i].length;
+                tinyMember = friends[i];
+            }
+        }
+    }
+    return tinyMember;
+}
