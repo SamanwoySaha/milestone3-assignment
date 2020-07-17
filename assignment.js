@@ -22,9 +22,28 @@ function woodCalculator(chair, table, bed) {
 }
 
 //brickCalculator
+function brickCalculator (floorNumber) {
+    var brickPerfeet = 1000;
+    var brickAmount = 0;
+    if (floorNumber < 0 || typeof(floorNumber) != 'number'){
+        return 'Please enter the number of positive value';
+    }
+    else if (floorNumber > 0 && floorNumber <= 10){
+        brickAmount = floorNumber * 15 * brickPerfeet;
+        return brickAmount;
+    }
+    else if (floorNumber >= 11 && floorNumber <= 20){
+        brickAmount = (10 * 15 * brickPerfeet) + ((floorNumber - 10) * 12 * brickPerfeet);
+        return brickAmount;
+    }
+    else if (floorNumber >= 21){
+        brickAmount = (10 * 15 * brickPerfeet) + (10 * 12 * brickPerfeet) + ((floorNumber - 20) * 10 * brickPerfeet);
+        return brickAmount;
+    }
+}
 
-//tinyFriends
-function tinyFriends(friends) {
+//tinyFriend
+function tinyFriend(friends) {
     var nameLength = friends[0].length;
     var tinyMember = friends[0];
     for (var i = 0; i < friends.length; i++){
